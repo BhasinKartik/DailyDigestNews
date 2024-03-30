@@ -6,7 +6,7 @@ export class Newsitem extends Component {
 
   }
   render() {
-    let {title,description,imageURL,newsUrl}=this.props;
+    let {title,description,imageURL,newsUrl,author,date}=this.props;
 
     return (
       <div>
@@ -14,8 +14,9 @@ export class Newsitem extends Component {
   <img src={!imageURL?"https://media.istockphoto.com/id/1311148884/vector/abstract-globe-background.jpg?s=612x612&w=0&k=20&c=9rVQfrUGNtR5Q0ygmuQ9jviVUfrnYHUHcfiwaH5-WFE=":imageURL} className="card-img-top" alt="..."/>
   <div className="card-body">
     <h5 className="card-title">{title}...</h5>
+    <p className="card-text"><small className="text-body-secondary">By {author?author:"Unknown"} at {new Date(date).toGMTString()}</small></p>
     <p className="card-text">{description}...</p>
-    <a href={newsUrl} target="_blank"className="btn btn-dark">Go somewhere</a>
+    <a href={newsUrl} target="_blank"className="btn btn-dark">Read More</a>
   </div>
 </div>
       </div>
